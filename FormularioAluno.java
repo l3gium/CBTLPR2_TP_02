@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+//Desenvolvido por Beatriz Bastos Borges e Miguel Luizatto Alves
+
 public class FormularioAluno extends JFrame {
 
     private JTextField nomeField, idadeField, enderecoField;
@@ -13,32 +15,28 @@ public class FormularioAluno extends JFrame {
     private List<Aluno> listaAlunos;
 
     public FormularioAluno() {
-        listaAlunos = new ArrayList<>();  // Inicializa a lista de alunos
+        listaAlunos = new ArrayList<>();
 
-        // Configurações da janela
         setTitle("TP02 - LP2I4");
         setSize(400, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
-        // Painel superior com GridLayout 3x2 e gaps
         JPanel panelSuperior = new JPanel(new GridLayout(3, 2, 10, 10));
 
-        // Componentes do painel superior
         JLabel nomeLabel = new JLabel("Nome:");
         nomeField = new JTextField();
-        nomeField.setPreferredSize(new Dimension(100, 20));  // Definindo largura e altura
+        nomeField.setPreferredSize(new Dimension(100, 20));
 
         JLabel idadeLabel = new JLabel("Idade:");
         idadeField = new JTextField();
-        idadeField.setPreferredSize(new Dimension(50, 20));  // Definindo largura e altura
+        idadeField.setPreferredSize(new Dimension(50, 20));
 
         JLabel enderecoLabel = new JLabel("Endereço:");
         enderecoField = new JTextField();
-        enderecoField.setPreferredSize(new Dimension(100, 20));  // Definindo largura e altura
+        enderecoField.setPreferredSize(new Dimension(100, 20));
 
-        // Adiciona os componentes ao painel superior
         panelSuperior.add(nomeLabel);
         panelSuperior.add(nomeField);
         panelSuperior.add(idadeLabel);
@@ -46,22 +44,18 @@ public class FormularioAluno extends JFrame {
         panelSuperior.add(enderecoLabel);
         panelSuperior.add(enderecoField);
 
-        // Painel inferior com GridLayout 1x4 para os botões
         JPanel panelInferior = new JPanel(new GridLayout(1, 4, 10, 10));
 
-        // Botões
         okButton = new JButton("Ok");
         limparButton = new JButton("Limpar");
         mostrarButton = new JButton("Mostrar");
         sairButton = new JButton("Sair");
 
-        // Adiciona os botões ao painel inferior
         panelInferior.add(okButton);
         panelInferior.add(limparButton);
         panelInferior.add(mostrarButton);
         panelInferior.add(sairButton);
 
-        // Ações dos botões
         okButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -90,12 +84,10 @@ public class FormularioAluno extends JFrame {
             }
         });
 
-        // Adiciona os painéis à janela
         add(panelSuperior, BorderLayout.CENTER);
         add(panelInferior, BorderLayout.SOUTH);
     }
 
-    // Método para adicionar aluno à lista
     private void adicionarAluno() {
         try {
             String nome = nomeField.getText();
@@ -105,29 +97,24 @@ public class FormularioAluno extends JFrame {
             aluno.setNome(nome);
             aluno.setIdade(idade);
             aluno.setEndereco(endereco);
-            aluno.setUuid(UUID.randomUUID());  // Gera um UUID para o aluno
+            aluno.setUuid(UUID.randomUUID());
 
-            // Armazena o aluno na lista
             listaAlunos.add(aluno);
 
-            // Mensagem de sucesso
             JOptionPane.showMessageDialog(this, "Aluno cadastrado com sucesso!");
 
-            // Limpa os campos após adicionar o aluno
             limparCampos();
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Idade inválida. Por favor, insira um número.");
         }
     }
 
-    // Limpa os campos do formulário
     private void limparCampos() {
         nomeField.setText("");
         idadeField.setText("");
         enderecoField.setText("");
     }
 
-    // Exibe a lista de alunos cadastrados com seus IDs e nomes
     private void mostrarAlunos() {
         if (listaAlunos.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Nenhum aluno cadastrado.");
@@ -141,7 +128,6 @@ public class FormularioAluno extends JFrame {
     }
 
     public static void main(String[] args) {
-        // Executa a aplicação
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
