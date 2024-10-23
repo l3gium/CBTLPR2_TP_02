@@ -1,12 +1,13 @@
 import java.util.UUID;
 
+//Desenvolvido por Beatriz Bastos Borges e Miguel Luizatto Alves
+
 class Aluno {
     private String endereco;
     private int idade;
     private String nome;
     private UUID uuid;
 
-    // Getters
     public String getEndereco() {
         return endereco;
     }
@@ -23,7 +24,6 @@ class Aluno {
         return uuid;
     }
 
-    // Setters
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
