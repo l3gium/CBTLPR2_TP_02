@@ -1,18 +1,10 @@
 import java.util.UUID;
 
-public class Aluno {
+class Aluno {
     private String endereco;
     private int idade;
     private String nome;
     private UUID uuid;
-
-    // Construtor
-    public Aluno(String nome, int idade, String endereco) {
-        this.uuid = UUID.randomUUID();  // Gera um ID único para o aluno
-        this.nome = nome;
-        this.idade = idade;
-        this.endereco = endereco;
-    }
 
     // Getters
     public String getEndereco() {
@@ -46,10 +38,5 @@ public class Aluno {
 
     public void setUuid(UUID uuid) {
         this.uuid = uuid;
-    }
-
-    @Override
-    public String toString() {
-        return "ID: " + uuid + " | Nome: " + nome + " | Idade: " + idade + " | Endereco: " + endereco;
     }
 }
