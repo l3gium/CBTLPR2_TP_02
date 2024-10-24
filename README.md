@@ -5,6 +5,8 @@
   <ol>
     <li type="a">Criar a seguinte classe Aluno, conforme diagrama:</li>
     <br/>
+    <img src="assets/diagrama.png">
+    <br/>
     Dica: Pesquisar a classe UUID.
     <br/><br/>
     <li type="a">Implementar o formulário possibilitando ao usuário cadastrar uma lista de alunos, respeitando as seguintes regras:</li>
@@ -18,3 +20,5 @@
     <li type="a">Criar o mecanismo de exibição abaixo, que contempla todos os ids e nomes dos alunos cadastrados nesta execução do programa, utilizando a classe: JOptionPane.showMessageDialog(this, mensagem);</li>
   </ol>
 </ol>
+<br/>
+Desenvolvido por Beatriz Bastos Borges e Miguel Luizatto Alves
