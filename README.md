@@ -22,3 +22,5 @@
 </ol>
 <br/>
 Desenvolvido por Beatriz Bastos Borges e Miguel Luizatto Alves
+<br>
+<a href="https://www.youtube.com/watch?v=2OBP6ZMVeC4" target="_blank">Clique aqui para ver o vídeo</a>
